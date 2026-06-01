@@ -905,3 +905,8 @@ button,
     grid-template-columns:1fr !important;
   }
 }
+
+.stats-grid b{
+  font-size:36px;
+  margin-left:2px;
+}
