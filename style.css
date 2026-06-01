@@ -609,3 +609,41 @@ footer{
     flex-wrap:wrap;
   }
 }
+
+a,
+button,
+.nav-btn,
+.primary,
+.secondary,
+.services span,
+.services a,
+.steps div,
+.stats-grid div,
+.faq div,
+.trust-card,
+.trust-item{
+  transition: all .25s ease;
+}
+
+.nav-btn:hover,
+.primary:hover,
+.secondary:hover,
+.services span:hover,
+.services a:hover,
+.steps div:hover,
+.stats-grid div:hover,
+.faq div:hover,
+.trust-card:hover{
+  transform: translateY(-4px);
+  border-color: rgba(0,212,255,.45);
+  box-shadow: 0 18px 45px rgba(0,119,255,.16);
+}
+
+.primary:hover{
+  box-shadow: 0 22px 55px rgba(0,119,255,.35);
+}
+
+.trust-item:hover{
+  color:#fff;
+  padding-left:8px;
+}
