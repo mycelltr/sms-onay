@@ -858,3 +858,50 @@ button,
 .msg.balance{
   border-left:4px solid #006dff;
 }
+
+.hero{
+  min-height:78vh !important;
+  display:grid !important;
+  grid-template-columns:1.15fr .85fr !important;
+  gap:55px !important;
+  align-items:center !important;
+  padding:90px 8% !important;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(0,212,255,.10), transparent 30%),
+    radial-gradient(circle at 80% 10%, rgba(0,102,255,.18), transparent 28%),
+    linear-gradient(135deg,#061426,#082b45) !important;
+}
+
+.hero-text{
+  max-width:850px !important;
+}
+
+.bot-mockup{
+  width:100% !important;
+  background:linear-gradient(180deg,#101827,#0b1320) !important;
+  border:1px solid rgba(255,255,255,.10) !important;
+  border-radius:32px !important;
+  padding:28px !important;
+  box-shadow:0 30px 80px rgba(0,0,0,.38) !important;
+}
+
+.live-card{
+  background:linear-gradient(180deg,#101827,#0b1320) !important;
+  border:1px solid rgba(255,255,255,.10) !important;
+  border-radius:28px !important;
+  padding:26px !important;
+}
+
+.live-row{
+  display:grid !important;
+  grid-template-columns:1fr 1fr 1fr !important;
+  gap:12px !important;
+  padding:14px 0 !important;
+  border-bottom:1px solid rgba(255,255,255,.06) !important;
+}
+
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr !important;
+  }
+}
