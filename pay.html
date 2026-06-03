@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyCell SMS | Kart ile Bakiye</title>
+<style>
+body{margin:0;font-family:Arial;background:#0d1624;color:white}
+.box{max-width:430px;margin:0 auto;padding:26px}
+.card{background:#121f31;border-radius:24px;padding:24px;box-shadow:0 20px 60px #0008}
+h1{font-size:28px;margin:0 0 10px}
+p{color:#9ca9bb}
+input,button{width:100%;box-sizing:border-box;border:0;border-radius:14px;padding:17px;font-size:18px;margin:9px 0}
+input{background:#fff;color:#111}
+.amounts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}
+.amounts button{background:#1b2b42;color:white;font-weight:bold}
+.amounts button.active{background:#175cff}
+.pay{background:#18d38b;color:#07111f;font-weight:bold}
+.note{font-size:13px;color:#8f9bad;margin-top:15px}
+.logo{font-size:32px;font-weight:900;margin-bottom:20px}
+.logo span{color:#25c7ff}
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="logo">MyCell <span>SMS</span></div>
+  <div class="card">
+    <h1>💳 Kart ile Bakiye Yükle</h1>
+    <p>Bakiye tutarını seç, ödeme sonrası bakiyen otomatik tanımlansın.</p>
+
+    <input id="tgid" placeholder="Telegram ID" readonly>
+    <input id="phone" placeholder="Telefon Numaranız">
+
+    <div class="amounts">
+      <button onclick="selectAmount(100,this)">100₺</button>
+      <button onclick="selectAmount(250,this)">250₺</button>
+      <button onclick="selectAmount(500,this)">500₺</button>
+      <button onclick="selectAmount(1000,this)">1000₺</button>
+    </div>
+
+    <button class="pay" onclick="goPay()">Bakiye Ekle</button>
+
+    <div class="note">
+      Ödeme sayfasında sipariş notuna Telegram ID’nizi yazınız.
+      ID’niz otomatik olarak yukarıda görünür.
+    </div>
+  </div>
+</div>
+
+<script>
+const links = {
+  100:"https://www.shopier.com/MyCellSMS/47680697",
+  250:"https://www.shopier.com/MyCellSMS/47680767",
+  500:"https://www.shopier.com/MyCellSMS/47680804",
+  1000:"https://www.shopier.com/MyCellSMS/47680836"
+};
+let selected = 100;
+const params = new URLSearchParams(location.search);
+document.getElementById("tgid").value = params.get("uid") || "";
+
+function selectAmount(amount,btn){
+  selected = amount;
+  document.querySelectorAll(".amounts button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+}
+document.querySelector(".amounts button").classList.add("active");
+
+function goPay(){
+  location.href = links[selected];
+}
+</script>
+</body>
+</html>
